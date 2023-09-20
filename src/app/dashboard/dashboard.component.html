@@ -1,0 +1,103 @@
+<header class="header">
+	<div class="header-content responsive-wrapper">
+		<div class="header-logo">
+			<a href="/login">
+				<div>
+					<img src="https://assets.codepen.io/285131/untitled-ui-icon.svg" />
+				</div>
+				<img src="https://assets.codepen.io/285131/untitled-ui.svg" />
+			</a>
+		</div>
+		<div class="header-navigation">
+			<nav class="header-navigation-links">
+				<a href="/dashboard"> Dashboard </a>
+			</nav>
+			<div class="header-navigation-actions">
+                <button type="submit" (click)="logout()" class="button login__submit">
+                    <i class="ph-lightning-bold"></i>
+                    <span>Log Out</span>
+                </button>
+				<a class="avatar">
+					<img src="https://assets.codepen.io/285131/hat-man.png" alt="" />
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+<main class="main">
+	<div class="responsive-wrapper">
+		<div class="main-header">
+			<h1>ToDo Things</h1>
+		</div>
+		<div class="horizontal-tabs">
+			<a href="/dashboard" class="active">DashBoard</a>
+		</div>
+		<div class="content-header">
+			<div class="content-header-intro">
+				<h2>ToDo Cards app</h2>
+				<p>Placeholder for ToDo Cards of the workflow and know the project progress.</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-panel">
+				<div class="vertical-tabs">
+					<a class="active">Example Tab 1</a>
+					<a>Example Tab 2</a>
+                    <a>Example Tab 3</a>
+                    <a>Example Tab 4</a>
+                    <a>Example Tab 5</a>
+				</div>
+			</div>
+			<div class="content-main">
+				<div class="card-grid">
+					<article class="card">
+						<div class="card-header">
+							<div>
+								<span><img src="https://assets.codepen.io/285131/github.svg" /></span>
+								<h3>GitHub</h3>
+							</div>
+							<label class="toggle">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+						<div class="card-body">
+							<p>ToDo Placeholder 1</p>
+						</div>
+					</article>
+                    <article class="card">
+						<div class="card-header">
+							<div>
+								<span><img src="https://assets.codepen.io/285131/slack.svg" /></span>
+								<h3>Slack</h3>
+							</div>
+							<label class="toggle">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+						<div class="card-body">
+							<p>ToDo Placeholder 2</p>
+						</div>
+					</article>
+                    <article class="card">
+						<div class="card-header">
+							<div>
+								<span><img src="https://assets.codepen.io/285131/google-chrome.svg" /></span>
+								<h3>Google Chrome</h3>
+							</div>
+							<label class="toggle">
+								<input type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>
+						<div class="card-body">
+							<p>ToDo Placeholder 3</p>
+						</div>
+					</article>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
