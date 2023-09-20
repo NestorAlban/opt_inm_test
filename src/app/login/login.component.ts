@@ -21,14 +21,12 @@ export class LoginComponent {
     ) {
 
     }
-    // email: string, password: string
     login() {
         let user = this.authService.login(
             this.form.value.email, 
             this.form.value.password
         ).subscribe(
             (accessToken: string) => {
-                // console.log(accessToken)
                 this.router.navigateByUrl('/dashboard')
             },
             (error) => {

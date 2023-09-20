@@ -9,28 +9,7 @@ import { map } from 'rxjs';
 })
 export class AuthService {
   private authUrl = 'http://159.65.96.86:8080/services/auth/signin'
-  users: any[] = [
-    {
-      id:1,
-      email:'email1@gmail.com',
-      password: 'password1',
-    },
-    {
-      id:2,
-      email:'email2@gmail.com',
-      password: 'password2',
-    },
-    {
-      id:3,
-      email:'email3@gmail.com',
-      password: 'password3',
-    },
-    {
-      id:4,
-      email:'a',
-      password: 'a',
-    }
-  ]
+
   session: any
   constructor(private router: Router, private http:HttpClient) { 
     let session: any = localStorage.getItem('session');
@@ -48,24 +27,17 @@ export class AuthService {
   }
   login(email: string, password: string){
 
-
     return this.authBody(email, password).pipe(
       map((response: HttpResponse<any>) => {
         const status = response.status;
         const responseData = response.body;
         if (status === 200) {
           const accessToken = responseData.accessToken;
-          // Realiza acciones con el token de acceso, si es necesario
-          // console.log('Token de acceso:', accessToken);
-
-          // Guarda el token en sesión o en otro lugar según tus necesidades
           this.session = {
             username: email,
             token: accessToken
           };
           localStorage.setItem('session', JSON.stringify(this.session))
-
-          // Devuelve el token de acceso
           return accessToken;
         } else {
           console.log('Status code:', status);
@@ -75,15 +47,6 @@ export class AuthService {
       })
     );
 
- 
-
-    // let user = this.users.find((us) => us.email === email && us.password === password)
-    // if(user){
-    //   this.session = user
-    //   localStorage.setItem('session', JSON.stringify(this.session))
-    // }
-    // return user
-    
   }
   logout(){
     this.session = undefined

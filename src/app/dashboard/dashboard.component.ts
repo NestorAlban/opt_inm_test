@@ -14,7 +14,6 @@ export class DashboardComponent {
     ) {
 
     }
-    // email: string, password: string
     
     logout() {
         this.authService.logout()
